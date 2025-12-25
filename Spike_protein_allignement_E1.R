@@ -1,9 +1,11 @@
 #install.packages("ape")
-library("ape")
-
-acc_numbers <- scan("AccessionNumbers.txt", what = "character", quiet = FALSE)
+SARS_2Example_function <- function(){
+  
 getwd()
 setwd("C:/Users/nicod/OneDrive - Haute Ecole en Hainaut/Documents/VisualStudio/R_scripts")
+library("ape")
+acc_numbers <- scan("AccessionNumbers.txt", what = "character", quiet = FALSE)
+
 ?scan
 acc_numbers_sorted <- sort(acc_numbers)
 #str(acc_numbers)
@@ -38,3 +40,6 @@ seq_lengths <- mean(sapply(final_sequences, length))
 
 # View the lengths
 print(seq_lengths)
+
+return(final_sequences)
+}

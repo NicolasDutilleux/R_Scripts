@@ -1,6 +1,14 @@
 library("ape")
 library("Biostrings")
 library("pwalign")
+file_path <- file.choose()
+
+# This automatically sets the working directory to where that file is.
+setwd(dirname(file_path))
+
+# Check if it worked
+getwd()
+
 sequences_dna <- read.GenBank("MW090859.1")
 final_seq_MW090859.1 <- toupper(paste(as.character(sequences_dna)[[1]], collapse = ""))
 
@@ -57,5 +65,4 @@ for(a in c(final_seq_Y10051.1, final_seq_CY125943.1, final_seq_A22884.1)){
     number <- number + 1
   }
 }
-
 
